@@ -1,5 +1,5 @@
 # Retro Space Shooter (Work In Progress)
-[![GitHub license](https://img.shields.io/github/license/AlexandreLadriere/FlappyBirdClone.svg)](https://github.com/AlexandreLadriere/FlappyBirdClone/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/AlexandreLadriere/RetroSpaceShooter.svg)](https://github.com/AlexandreLadriere/RetroSpaceShooter/blob/master/LICENSE)
 
 This is my second game made with Unity
 
