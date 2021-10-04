@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
 
     private Vector3 _direction;
-    private Vector2 _moveForward = new Vector2(1, 1);
     private float _speed = 4f;
-    private float _speedRotate = 5f;
+    private float _speedRotate = 1f;
 
     // Start is called before the first frame update
     void Start()
