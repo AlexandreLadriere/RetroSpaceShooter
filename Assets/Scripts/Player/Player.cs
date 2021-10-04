@@ -8,9 +8,7 @@ public class Player : MonoBehaviour
 
     private Vector3 _direction;
     private Vector2 _moveForward = new Vector2(1, 1);
-    [SerializeField]
-    private float _speed = 1f;
-    [SerializeField]
+    private float _speed = 4f;
     private float _speedRotate = 5f;
 
     // Start is called before the first frame update
@@ -32,11 +30,11 @@ public class Player : MonoBehaviour
 
     void Movement() {
         transform.position += transform.up * Time.deltaTime * _speed;
-        if (_direction.x == -1) {
-            transform.Rotate(Vector3.forward);
+        if (_direction.x < 0) {
+            transform.Rotate(Vector3.forward * _speedRotate);
         }
-        if (_direction.x == 1) {
-            transform.Rotate(Vector3.back);
+        if (_direction.x > 0) {
+            transform.Rotate(Vector3.back * _speedRotate);
         }
     }
 }
