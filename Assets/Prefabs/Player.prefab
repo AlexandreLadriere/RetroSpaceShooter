@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 264851861}
   - component: {fileID: 3512264312837595959}
   - component: {fileID: 5260524850032872429}
+  - component: {fileID: -711698687921582514}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -281,4 +282,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 2060401744}
   laserBeamPrefab: {fileID: 1516483262869787258, guid: 102dd0313281aa041843c2cd6d7de403, type: 3}
-  laserBeamForce: 20
+--- !u!50 &-711698687921582514
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2837955342023094895}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
