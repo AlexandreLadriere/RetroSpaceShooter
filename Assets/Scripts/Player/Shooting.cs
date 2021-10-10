@@ -8,26 +8,24 @@ public class Shooting : MonoBehaviour
     private InputAction leftMouseClick;
     public Transform firePoint;
     public GameObject laserBeamPrefab;
-    private void Awake() {
+    private void Awake()
+    {
         leftMouseClick = new InputAction(binding: "<Mouse>/leftButton");
         leftMouseClick.performed += context => shootButtonPressed(context);
         leftMouseClick.Enable();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void shootButtonPressed(InputAction.CallbackContext context)
     {
-        
-    }
-
-    public void shootButtonPressed(InputAction.CallbackContext context) {
         // Perform action only once (and not when phase started and performed)
-        if(context.performed) {
+        if (context.performed)
+        {
             Shoot();
         }
     }
 
-    public void Shoot() {
+    public void Shoot()
+    {
         GameObject laserBeam = Instantiate(laserBeamPrefab, firePoint.position, firePoint.rotation);
     }
 }
