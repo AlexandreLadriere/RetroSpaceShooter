@@ -9,12 +9,14 @@ public static class Constants
 
     // Player attributes
     public static float PLAYER_SPEED = 4f;
+    public static int PLAYER_HEALTH = 100;
     public static float PLAYER_ROTATION_SPEED = 1f;
 
     // Enemies attributes
         // Default enemy
         public static float DEFAULT_ENEMY_SPEED = 2f;
         public static int DEFAULT_ENEMY_HEALTH = 100;
+        public static int DEFAULT_ENEMY_HIT_DAMAGE = 20;
 
     // Weapons attributes
         // Default laser beam
