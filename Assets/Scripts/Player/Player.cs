@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
+    }
+
+    private void Start() {
         healthBar.SetMaxHealth(health);
     }
 
@@ -25,6 +28,13 @@ public class Player : MonoBehaviour
             Die();
         }
     }
+
+    public void RestoreHealth(int healthBonus) {
+        health += healthBonus;
+        Debug.Log("Bonus");
+        healthBar.SetHealth(health);
+    }
+
     public void Die()
     {
         Destroy(gameObject);
@@ -35,6 +45,9 @@ public class Player : MonoBehaviour
         if (hitInfo.gameObject.tag == Constants.ENEMY_TAG)
         {
             TakeDamage(Constants.DEFAULT_ENEMY_HIT_DAMAGE);
+        }
+        else if (hitInfo.gameObject.tag == Constants.HEALTH_BONUS_TAG) {
+            RestoreHealth(Constants.HEALTH_POINT_BONUS);
         }
     }
 

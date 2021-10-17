@@ -10,22 +10,27 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private Transform topSpawner, rightSpawner, bottomSpawner, leftSpawner;
     private GameObject spawnedEnemy;
+    private GameObject spawnedHealthBonus;
+    [SerializeField]
+    private GameObject healthBonusPrefab;
     private int randomEnemyIndex;
     private int randomSpawnerIndex;
     private int angleShift = Constants.SPAWNER_ANGLE_SHIT;
-    private int excludedMaxTimeToWait = Constants.SPAWNER_MAX_TIME_TO_WAIT;
+    private int excludedMaxTimeToWaitEnemy = Constants.SPAWNER_MAX_TIME_TO_WAIT_ENEMY;
+    private int excludedMaxTimeToWaitHealthBonus = Constants.SPAWNER_MAX_TIME_TO_WAIT_HEALTH_BONUS;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SpawnEnemies());
+        StartCoroutine(SpawnHealthBonus());
     }
 
     IEnumerator SpawnEnemies()
     {
         while (true)
         { // While true for now, but will be replaced with real condition after
-            yield return new WaitForSeconds(Random.Range(1, excludedMaxTimeToWait));
+            yield return new WaitForSeconds(Random.Range(1, excludedMaxTimeToWaitEnemy));
             randomEnemyIndex = Random.Range(0, enemyReference.Length);
             randomSpawnerIndex = Random.Range(0, 4);
             spawnedEnemy = Instantiate(enemyReference[randomEnemyIndex]);
@@ -64,6 +69,18 @@ public class EnemySpawner : MonoBehaviour
                 default:
                     break;
             }
+        }
+    }
+
+    IEnumerator SpawnHealthBonus()
+    {
+        while (true) {
+            // While true for now, but will be replaced with real condition after
+            yield return new WaitForSeconds(Random.Range(1, excludedMaxTimeToWaitHealthBonus));
+            float xPosition = Random.Range(leftSpawner.position.x, rightSpawner.position.x);
+            float yPosition = Random.Range(bottomSpawner.position.y, topSpawner.position.y);
+            spawnedHealthBonus = Instantiate(healthBonusPrefab);
+            spawnedHealthBonus.transform.position = new Vector3(xPosition, yPosition, 0);
         }
     }
 }

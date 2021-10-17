@@ -26,6 +26,8 @@ public class Shooting : MonoBehaviour
 
     public void Shoot()
     {
-        GameObject laserBeam = Instantiate(laserBeamPrefab, firePoint.position, firePoint.rotation);
+        if (firePoint) {
+            GameObject laserBeam = Instantiate(laserBeamPrefab, firePoint.position, firePoint.rotation);
+        }
     }
 }

@@ -3,6 +3,8 @@ public static class Constants
     // TAGS
     public static string SPAWNER_TAG = "Spawner";
     public static string ENEMY_TAG = "Enemy";
+    public static string PLAYER_TAG = "Player";
+    public static string HEALTH_BONUS_TAG = "HealthBonus";
 
     // Animations
     public static string IS_HIT_ANIM = "isHit";
@@ -23,7 +25,13 @@ public static class Constants
         public static float DEFAULT_LASERBEAM_FORCE = 20f;
         public static int DEFAULT_LASERBEAM_DAMAGE = 50;
 
+    // Bonus attributes
+        // Health Bonus
+        public static int HEALTH_BONUS_LIFETIME = 5;
+        public static int HEALTH_POINT_BONUS = 20;
+
     // Spawner attributes
     public static int SPAWNER_ANGLE_SHIT = 40;
-    public static int SPAWNER_MAX_TIME_TO_WAIT = 5;
+    public static int SPAWNER_MAX_TIME_TO_WAIT_ENEMY = 5;
+    public static int SPAWNER_MAX_TIME_TO_WAIT_HEALTH_BONUS = 20;
 }
