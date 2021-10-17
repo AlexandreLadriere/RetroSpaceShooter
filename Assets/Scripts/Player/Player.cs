@@ -7,16 +7,19 @@ public class Player : MonoBehaviour
     private int health = Constants.PLAYER_HEALTH;
     private string IS_HIT_ANIMATION = Constants.IS_HIT_ANIM;
     private Animator anim;
+    public HealthBar healthBar;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        healthBar.SetMaxHealth(health);
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
         anim.SetTrigger(IS_HIT_ANIMATION);
+        healthBar.SetHealth(health);
         if (health <= 0)
         {
             Die();
