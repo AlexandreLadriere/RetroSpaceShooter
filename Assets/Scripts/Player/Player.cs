@@ -34,4 +34,9 @@ public class Player : MonoBehaviour
             TakeDamage(Constants.DEFAULT_ENEMY_HIT_DAMAGE);
         }
     }
+
+    private void OnBecameInvisible() {
+        // GameOver()
+        Die();
+    }
 }
