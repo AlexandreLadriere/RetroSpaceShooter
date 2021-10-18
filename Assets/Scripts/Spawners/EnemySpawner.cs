@@ -34,6 +34,8 @@ public class EnemySpawner : MonoBehaviour
             randomEnemyIndex = Random.Range(0, enemyReference.Length);
             randomSpawnerIndex = Random.Range(0, 4);
             spawnedEnemy = Instantiate(enemyReference[randomEnemyIndex]);
+            Enemy enemy = spawnedEnemy.GetComponent<Enemy>();
+            enemy.Init(health: Constants.DEFAULT_ENEMY_HEALTH, speed: Constants.DEFAULT_ENEMY_SPEED);
 
             switch (randomSpawnerIndex)
             {

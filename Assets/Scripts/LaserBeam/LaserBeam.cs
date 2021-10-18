@@ -6,6 +6,12 @@ public class LaserBeam : MonoBehaviour
 {
     public float laserBeamForce = Constants.DEFAULT_LASERBEAM_FORCE;
     public int damage = Constants.DEFAULT_LASERBEAM_DAMAGE;
+
+    public void Init(int damage, float laserBeamForce) {
+        this.laserBeamForce = laserBeamForce;
+        this.damage = damage;
+    }
+
     private void Start()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();

@@ -30,9 +30,10 @@ public class Player : MonoBehaviour
     }
 
     public void RestoreHealth(int healthBonus) {
-        health += healthBonus;
-        Debug.Log("Bonus");
-        healthBar.SetHealth(health);
+        if (health < Constants.PLAYER_HEALTH) {
+            health += healthBonus;
+            healthBar.SetHealth(health);
+        }
     }
 
     public void Die()

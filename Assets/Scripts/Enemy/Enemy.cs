@@ -7,7 +7,12 @@ public class Enemy : MonoBehaviour
     private int health = Constants.DEFAULT_ENEMY_HEALTH;
     private string IS_HIT_ANIMATION = Constants.IS_HIT_ANIM;
     private Animator anim;
-    private float _speed = Constants.DEFAULT_ENEMY_SPEED;
+    private float speed = Constants.DEFAULT_ENEMY_SPEED;
+
+    public void Init(int health, float speed) {
+        this.health = health;
+        this.speed = speed;
+    }
 
     private void Awake()
     {
@@ -16,7 +21,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        transform.position += transform.up * Time.deltaTime * _speed;
+        transform.position += transform.up * Time.deltaTime * speed;
     }
 
     public void TakeDamage(int damage)
