@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7020154894251227257}
   - component: {fileID: 7020154894251227258}
   - component: {fileID: 7020154894251227263}
+  - component: {fileID: 7285478826392088729}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Enemy
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7020154894251227259}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5061, y: 0.6192, z: 0}
-  m_LocalScale: {x: 0.8081, y: 0.8081, z: 0.8081}
+  m_LocalPosition: {x: -3.6289, y: 0.7136, z: 0}
+  m_LocalScale: {x: 0.6051053, y: 0.6051053, z: 0.6051053}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -113,7 +114,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -140,3 +141,15 @@ PolygonCollider2D:
       - {x: 0.5242073, y: -0.40341455}
       - {x: 0.60499996, y: -0.33499998}
       - {x: 0.61039644, y: 0.10167666}
+--- !u!114 &7285478826392088729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020154894251227259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ac3cef26821124ca7d4046d760567f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -530,6 +530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyReference:
   - {fileID: 313104993935433789, guid: 336afd3ef12e64f46834e66cb8cd3d76, type: 3}
+  - {fileID: 7020154894251227259, guid: c8e09853f15077e408f0e442264ef442, type: 3}
   topSpawner: {fileID: 80105067}
   rightSpawner: {fileID: 124554538}
   bottomSpawner: {fileID: 1152049508}
@@ -729,7 +730,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 174.89996, y: 29.600006}
+  m_AnchoredPosition: {x: 174.8999, y: 29.600098}
   m_SizeDelta: {x: 235.13, y: 25.98999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &856864797
