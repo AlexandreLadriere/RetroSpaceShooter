@@ -8,10 +8,12 @@ public class Enemy : MonoBehaviour
     private string IS_HIT_ANIMATION = Constants.IS_HIT_ANIM;
     private Animator anim;
     private float speed = Constants.DEFAULT_ENEMY_SPEED;
+    private int killScore = Constants.DEFAULT_ENEMY_SCORE;
 
-    public void Init(int health, float speed) {
+    public void Init(int health, float speed, int killScore) {
         this.health = health;
         this.speed = speed;
+        this.killScore = killScore;
     }
 
     private void Awake()
@@ -36,6 +38,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        ScoreManager.instance.increaseScore(Constants.DEFAULT_ENEMY_SCORE);
         Destroy(gameObject);
     }
 
@@ -43,7 +46,7 @@ public class Enemy : MonoBehaviour
     {
         if (hitInfo.gameObject.tag == Constants.SPAWNER_TAG)
         {
-            Die();
+            Destroy(gameObject);
         }
     }
 }

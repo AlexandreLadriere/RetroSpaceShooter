@@ -19,6 +19,7 @@ public static class Constants
         public static float DEFAULT_ENEMY_SPEED = 2f;
         public static int DEFAULT_ENEMY_HEALTH = 100;
         public static int DEFAULT_ENEMY_HIT_DAMAGE = 20;
+        public static int DEFAULT_ENEMY_SCORE = 10;
 
     // Weapons attributes
         // Default laser beam
@@ -34,4 +35,6 @@ public static class Constants
     public static int SPAWNER_ANGLE_SHIT = 40;
     public static int SPAWNER_MAX_TIME_TO_WAIT_ENEMY = 5;
     public static int SPAWNER_MAX_TIME_TO_WAIT_HEALTH_BONUS = 20;
+
+    // UI attributes
 }
