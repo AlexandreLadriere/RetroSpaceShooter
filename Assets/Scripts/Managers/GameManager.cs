@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,5 +20,9 @@ public class GameManager : MonoBehaviour
 
     public void Start() {
         ScoreManager.instance.setScore(0);
+    }
+
+    public void RemoveFromDontDestroyOnLoad() {
+        SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
     }
 }

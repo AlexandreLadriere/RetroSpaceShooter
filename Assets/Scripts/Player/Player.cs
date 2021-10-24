@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
+        GameOverManager.instance.PlayerDied();
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
