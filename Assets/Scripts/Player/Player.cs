@@ -38,8 +38,10 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
-        GameOverManager.instance.PlayerDied();
+        if (this != null) {
+            GameOverManager.instance.PlayerDied();
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
