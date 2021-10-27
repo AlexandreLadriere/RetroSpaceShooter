@@ -21,7 +21,9 @@ public class GameOverManager : MonoBehaviour
     }
 
     public void PlayerDied() {
-        gameOverUI.SetActive(true);
+        if (gameOverUI != null) {
+            gameOverUI.SetActive(true);
+        }
     }
 
     public void RetryButton() {
