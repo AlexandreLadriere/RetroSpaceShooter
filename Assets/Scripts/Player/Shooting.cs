@@ -5,14 +5,23 @@ using UnityEngine.InputSystem;
 
 public class Shooting : MonoBehaviour
 {
+    public static Shooting instance { get; private set; }
     private InputAction leftMouseClick;
     public Transform firePoint;
     public GameObject laserBeamPrefab;
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(this);
+        }
         leftMouseClick = new InputAction(binding: "<Mouse>/leftButton");
         leftMouseClick.performed += context => shootButtonPressed(context);
-        leftMouseClick.Enable();
+        EnableShooting();
     }
 
     public void shootButtonPressed(InputAction.CallbackContext context)
@@ -31,5 +40,13 @@ public class Shooting : MonoBehaviour
             LaserBeam laserBeam = laserBeamObj.GetComponent<LaserBeam>();
             laserBeam.Init(damage: Constants.DEFAULT_LASERBEAM_DAMAGE, laserBeamForce: Constants.DEFAULT_LASERBEAM_FORCE);
         }
+    }
+
+    public void DisableShooting() {
+        leftMouseClick.Disable();
+    }
+
+    public void EnableShooting() {
+        leftMouseClick.Enable();
     }
 }

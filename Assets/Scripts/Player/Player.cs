@@ -1,17 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    public static Player instance { get; private set; }
     private int health = Constants.PLAYER_HEALTH;
     private string IS_HIT_ANIMATION = Constants.IS_HIT_ANIM;
     private Animator anim;
     public HealthBar healthBar;
+    public PlayerInput playerInput;
+
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(this);
+        }
         anim = GetComponent<Animator>();
+        playerInput = GetComponent<PlayerInput>();
     }
 
     private void Start() {
@@ -58,5 +71,13 @@ public class Player : MonoBehaviour
     private void OnBecameInvisible() {
         // GameOver()
         Die();
+    }
+
+    public void DisablePlayerInput() {
+        playerInput.actions["Shooting"].Disable();
+    }
+
+    public void EnablePlayerInput() {
+        playerInput.actions["Shooting"].Enable();
     }
 }

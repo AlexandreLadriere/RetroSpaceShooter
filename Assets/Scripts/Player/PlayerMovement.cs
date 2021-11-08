@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    public static PlayerMovement instance { get; private set; }
     private Vector3 _direction;
     private float _speed = Constants.PLAYER_SPEED;
     private float _speedRotate = Constants.PLAYER_ROTATION_SPEED;
@@ -32,6 +32,17 @@ public class PlayerMovement : MonoBehaviour
         if (_direction.x > 0)
         {
             transform.Rotate(Vector3.back * _speedRotate);
+        }
+    }
+
+    private void Awake() {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(this);
         }
     }
 }

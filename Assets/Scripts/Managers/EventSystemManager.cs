@@ -24,10 +24,10 @@ public class EventSystemManager : MonoBehaviour
 
     public void SwitchFirstSelected(bool isPaused) {
         if(isPaused) {
-            eventSystem.firstSelectedGameObject = pauseMenuButtonFirstSelected;
+            eventSystem.SetSelectedGameObject(pauseMenuButtonFirstSelected);
         }
         else {
-            eventSystem.firstSelectedGameObject = gameOverMenuButtonFirstSelected;
+            eventSystem.SetSelectedGameObject(gameOverMenuButtonFirstSelected);
         }
     }
 }

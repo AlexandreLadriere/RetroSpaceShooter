@@ -37,79 +37,91 @@ public class GameButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (btn.interactable)
-        {
-            txt.color = Color.black;
-            btn.image.fillCenter = true;
-        }
-        else
-        {
-            txt.color = baseColor;
+        if (btn) {
+            if (btn.interactable)
+            {
+                txt.color = Color.black;
+                btn.image.fillCenter = true;
+            }
+            else
+            {
+                txt.color = baseColor;
+            }
         }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (btn.interactable)
-        {
-            txt.color = Color.black;
-            btn.image.fillCenter = true;
-        }
-        else
-        {
-            txt.color = baseColor;
+        if (btn) {
+            if (btn.interactable)
+            {
+                txt.color = Color.black;
+                btn.image.fillCenter = true;
+            }
+            else
+            {
+                txt.color = baseColor;
+            }
         }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (btn.interactable)
-        {
-            txt.color = Color.white;
-            btn.image.fillCenter = false;
-        }
-        else
-        {
-            txt.color = baseColor;
+        if (btn) {
+            if (btn.interactable)
+            {
+                txt.color = Color.white;
+                btn.image.fillCenter = false;
+            }
+            else
+            {
+                txt.color = baseColor;
+            }
         }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (btn.interactable)
-        {
-            txt.color = Color.white;
-            btn.image.fillCenter = false;
-        }
-        else
-        {
-            txt.color = baseColor;
+        if (btn) {
+            if (btn.interactable)
+            {
+                txt.color = Color.white;
+                btn.image.fillCenter = false;
+            }
+            else
+            {
+                txt.color = baseColor;
+            }
         }
     }
 
     public void OnSelect(BaseEventData eventData)
     {
-        if (btn.interactable)
-        {
-            txt.color = Color.black;
-            btn.image.fillCenter = true;
-        }
-        else
-        {
-            txt.color = baseColor;
+        if (btn) {
+            if (btn.interactable)
+            {
+                txt.color = Color.black;
+                btn.image.fillCenter = true;
+            }
+            else
+            {
+                txt.color = baseColor;
+            }
         }
     }
 
     public void OnDeselect(BaseEventData eventData)
     {
-        if (btn.interactable)
-        {
-            txt.color = Color.white;
-            btn.image.fillCenter = false;
-        }
-        else
-        {
-            txt.color = baseColor;
+        if (btn) {
+            if (btn.interactable)
+            {
+                txt.color = Color.white;
+                btn.image.fillCenter = false;
+            }
+            else
+            {
+                txt.color = baseColor;
+            }
         }
     }
 }
